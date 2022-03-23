@@ -11,7 +11,7 @@ const port: number = process.env.PORT
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, {
-    cors: false,
+    cors: true,
     // logger: ,
     // process.env.NODE_ENV === 'development'
     //   ? ['log', 'debug', 'error', 'verbose', 'warn']

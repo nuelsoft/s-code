@@ -21,7 +21,7 @@ export class RecognitionController {
   @UseInterceptors(FileInterceptor('file'))
   async identify(@UploadedFile() file: Express.Multer.File) {
     this.logger.log('.identify');
-    const split = file.originalname.split('.');
+    const split = (file?.originalname ?? 'name.wav').split('.');
     this.logger.debug('.identify split', split);
     const path = join(
       __dirname,
